@@ -1,0 +1,361 @@
+
+*
+{
+    padding: 0;
+    margin: 0;
+    
+}
+body
+{
+    /* background-image: url(images\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+    
+    box-sizing: border-box;
+    font-family: sans-serif;*/
+    
+    
+    
+}
+#mc2{
+    background-image: url(back16.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* modal styling */
+
+h1{
+    font-size: 80px;
+    position: absolute;
+    top: 10;
+    margin: 0;
+    padding: 0;
+}
+.modalbg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    z-index: 99999;
+    transition: all 0.3s ease-out;
+    transition-delay: 0.2s;
+    display: block;
+    overflow: auto;
+    pointer-events: none;
+}
+.modalbg .dialog{
+    width: 30%;
+    position: relative;
+    top: -1000px;
+    margin: 10% auto;
+    border-radius: 20px;
+    background: #fff;
+    padding: 30px;
+}
+.modalbg:target{
+    display: block;
+    pointer-events: auto;
+    background: rgba(4,10,30,0.8);
+    transition: all 0.2 ease-out;
+}
+.modalbg:target .dialog{
+    top: -60px;
+    transition: all 0.3s ease-out;
+    -transition-delay: 0.2s;
+}
+.close{
+    color: #444;
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-out;
+}
+.close:hover{
+    background: #000;
+    transition: all 0.2s ease-out;
+    color: #fff;
+}
+.modal-text{
+    width: 100%;
+    height: auto;
+}
+.InterestsField{
+    width: 170px;
+}
+.modal-text h2{
+    font-size: 24px;
+    text-align: center;
+    color: green;
+    margin: 0px;
+    border-bottom: 1px solid #1099ad;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.modal-text p{
+    font-size: 13px;
+    color: #444;
+    margin: 0px;
+    padding-top: 0px;
+}
+.style-text{
+    width: 95%;
+    height: 35px;
+    font-size: 10px;
+    text-align: left;
+    margin-left: 2px;
+    color: #444;
+    margin: 0px;
+    border: 1px solid #999;
+    padding: 0px 10px;
+    margin-top: 10px;text-align: center;
+}
+.submit {
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    background: green;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    border: 1px solid #1099ad;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.cancel {
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    background: rgb(170, 15, 62);
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    border: 1px solid #1099ad;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.menu-bar
+{
+  background: rgb(0, 90, 0);
+  text-align: center;
+  height: 50px;
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li
+{
+    width: 1000px;
+    margin: 1px;
+    padding: 5px;
+}
+.my-custom-scrollbar{
+    position: relative;
+    height: 350px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y{
+    display: block;
+}
+.my-custom-scrollbarCard{
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* .active, .menu-bar ul li:hover
+{
+    background: #2bab0d;
+    border-radius: 3px;
+} */
+.wrapper
+{
+    width: 400px;
+    height: 450px;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    padding: 60px 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px #000;
+
+
+}
+.container{
+    margin-top: 1%;
+   
+}
+.client-container{
+     display: none;
+}
+.clientsName{
+   
+    text-align: center;
+}
+
+.list{
+    color: white;
+    padding-top: 15px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.clients-card-body{
+    background: rgb(63, 52, 60);
+    height: 100%;
+
+}
+.table thead{
+    background-color: rgb(16, 90, 16);
+    color: white;
+    margin-top: 2px;
+    font-size: 14px;
+    width: 200px;
+    
+    
+}
+th{
+    font-family: sans-serif;
+    
+}
+h1
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10%;
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(9, 199, 18);
+    text-align: center;
+    margin-top: 2px;
+}
+.wrapper input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wrapper input[type = text], .wrapper input[type = password]
+{
+    border: navy;
+    height: 30px;
+    border-bottom: 1px solid rgb(84, 15, 196);
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    opacity: 1;
+}
+.loader{
+    text-align: center;
+}
+.wrapper input[type = submit], .wrapper button[type = login]
+{
+    border: none;
+    outline: none;
+    height: 30px;
+    background: #d7e605;
+    margin-top: 15%;
+    color: #fff;
+    font-style: 14px;
+    font-weight: bold;
+}
+.wrapper input[type = submit]:hover
+{
+    cursor: pointer;
+    color: black;
+    background-color: cornsilk;
+
+}
+.wrapper a
+{
+    font-size: 14px;
+    text-decoration: none;
+    color: blue;
+    opacity: 0.8;
+}
+.wrapper a :hover
+{
+    color: rgb(231, 69, 69);
+    opacity: 1;
+}
+.bottom_text
+{
+    color: rgb(230, 29, 29);
+}
+.bottom_text input 
+{
+    width: 10%;
+    float: left;
+}
+.bottom_text a 
+{
+    float: right;
+}
+.socials 
+{
+    margin-top: 12%;
+    text-align: center;
+}
+.table td{
+    border-style: groove;
+}
+#theadcards th{
+    font-size: 10px;
+    height: 10px;
+} 
+#tableCards td{
+    font-size: 10px;
+}
+#tableCardsStatus th{
+    font-size: 10px;
+}
+#tableCardsStatus td{
+    font-size: 10px;
+}
+/* #overlay_area
+{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0%;
+} */
+
+
+
+
+
+
+
+/* .socials a{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    border: 1px solid #2bab0d;
+    border-radius: 50%;
+    margin: 0 5px;
+    margin-bottom: 10%;
+} */
+

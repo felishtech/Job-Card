@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RCC</title>
+    
+        <meta content="" name="description">
+      <meta content="" name="keywords">
+    
+      <!-- Favicons -->
+      <link href="RANGE ROVER CENTRE LTD-01.png" rel="icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+            <link rel="stylesheet" href="style.css">
+            <!-- <link rel="stylesheet" href="st.css"> -->
+            <link rel="stylesheet" href="clients.css">
+            <!-- <link rel="stylesheet" href="st.css"> -->
+            <!-- <link rel="stylesheet" href="dashboard.css"> -->
+            <!-- <link rel="stylesheet" href="dashboard.css"> -->
+            <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/
+                line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+
+        <div id="loginDiv">
+            <div id="loginForm" style="text-align: center; background-color: #fafafafd; border-radius: 10px;" class="wrapper">
+              
+              
+                
+                <form action="" id="lgForm">
+                   
+                    <div style="float: center;">
+                        <img src="RRC LTD blk-01.png" alt="" style="width: 180px;">
+                       
+                            <h4 id="lgHeader" style="text-align: center;">Login</h4>
+                        
+                   <div >
+
+                        <div style="align-items: center;margin-left: 20%; width: 60%;border-color:#12733C;border:3;">
+                            <input id="PINN" placeholder="Username"  style="margin-top: 22px;text-align: center;  height: 30px; border: 2; padding-left: 10px" type="text">
+                        </div>
+                    
+                        
+                        <div style=" width: 60%;margin-left: 20%;">
+                            <input type="password" placeholder="Password" id="pass" style="padding-left: 10px; text-align: center;">
+                        </div>
+                   </div>
+                   
+                           
+                 
+                    </div>
+                   
+                
+                    <button onclick="logIn()" id="btn-login" type="button">OK</button>
+                    
+                </form>
+               
+                <div  style="float: right; margin-top: 40px;">
+                    <p style="font-size: 12px; color: rgb(14, 13, 13);" id="acknow">Powered by <span style="color: blueviolet; font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Dijitx</span></p></div>
+                
+            </div>
+           
+        </div>
+<script id="Main">
+var firebaseConfig = {
+       apiKey: "AIzaSyCoJPBpfck0eCZGJXgInojm_Ard0RqEfkc",
+            authDomain: "rangerovercentrer.firebaseapp.com",
+            databaseURL: "https://rangerovercentrer-default-rtdb.firebaseio.com/",
+            projectId: "rangerovercentrer",
+            storageBucket: "rangerovercentrer.appspot.com",
+            messagingSenderId: "183256192754",
+            appId: "1:183256192754:web:78ada3619cb3fc6c6c226b",
+       
+        measurementId: "G-5M36VH3YEL"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+function logIn(){
+        var username =getInputValue("PINN")
+        var passs =getInputValue("pass")
+
+
+        firebase.database().ref("Admins").child("Admin").once("value",
+        function(Data){
+
+            if (Data.exists()){
+
+                    var rightPin = Data.val().username;
+                    var rightPass = Data.val().password;
+
+                    if(rightPin != username){
+                        alert("Declined")
+                    }
+                    else{
+                        if(rightPass != passs){
+                            alert("Declined")
+                            }
+                            else{
+                                // alert("OK")
+                                // var content = document.getElementById("content")
+                                // content.style.display ="block"
+                                // var loginDiv = document.getElementById("loginDiv")
+                                // loginDiv.style.display ="none"
+                                window.location.href = "clients.html"
+
+                             }
+                   }
+            }
+            else{
+                alert("No record found in the system!")
+            }
+           
+
+           
+        })
+    } 
+    
+    function getInputValue(id){
+        return document.getElementById(id).value;
+    }
+        </script>
+    </body>
+</html>
